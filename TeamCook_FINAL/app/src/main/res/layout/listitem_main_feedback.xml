@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="71dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        android:weightSum="12">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_weight="3"
+            >
+            <LinearLayout
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:orientation="horizontal"
+                android:background="@drawable/circle"
+                android:gravity="center">
+                <ImageView
+                    android:id="@+id/talklist_profile_icon"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:src="@drawable/icon_profile_icon01"
+                    />
+
+                <!-- android:textColor="#ffffff"
+                 android:textSize="16dp"
+                 android:text="인천항"-->
+
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="9"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:weightSum="7">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_weight="3"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/feedback_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#090909"
+                        android:textSize="20dp"
+                        android:text="김기현"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_weight="4"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#090909"
+                        android:textSize="17dp"
+                        android:text="LV."/>
+                    <View
+                        android:layout_width="5dp"
+                        android:layout_height="0dp"/>
+                    <TextView
+                        android:id="@+id/feedback_level"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#090909"
+                        android:textSize="17dp"
+                        android:text="5"/>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:weightSum="7"
+                android:layout_marginBottom="5dp"
+                android:layout_gravity="center_vertical">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#faa285"
+                        android:text="역할"
+                        android:textSize="16dp"
+                        />
+                    <View
+                        android:layout_width="5dp"
+                        android:layout_height="0dp"/>
+                    <TextView
+                        android:id="@+id/feedback_roll"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#050505"
+                        android:text="디자이너"
+                        android:textSize="16dp"
+                        android:layout_marginRight="10dp"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:id="@+id/talklist_chatting_btn"
+                        android:layout_width="65dp"
+                        android:layout_height="22dp"
+                        android:textColor="#0a0a0a"
+                        android:textSize="14dp"
+                        android:text="피드백"
+                        android:gravity="center"
+                        android:background="@drawable/button"
+                        android:backgroundTint="#faa285"
+                        />
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#faa285">
+    </LinearLayout>
+</LinearLayout>
