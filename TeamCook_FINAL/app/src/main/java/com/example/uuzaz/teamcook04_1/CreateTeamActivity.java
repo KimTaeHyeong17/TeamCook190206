@@ -242,12 +242,14 @@ public class CreateTeamActivity extends AppCompatActivity implements View.OnClic
                 }
             case R.id.id_reset_team:
                 count = 0;
+                member_num.setText("0");
                 view_first_person.setImageResource(R.drawable.icon_empty_person);
                 view_second_person.setImageResource(R.drawable.icon_empty_person);
                 view_third_person.setImageResource(R.drawable.icon_empty_person);
                 view_fourth_person.setImageResource(R.drawable.icon_empty_person);
                 view_fifth_person.setImageResource(R.drawable.icon_empty_person);
                 view_sixth_person.setImageResource(R.drawable.icon_empty_person);
+                Toast.makeText(CreateTeamActivity.this,"초기화",Toast.LENGTH_LONG).show();
                 break;
 
 

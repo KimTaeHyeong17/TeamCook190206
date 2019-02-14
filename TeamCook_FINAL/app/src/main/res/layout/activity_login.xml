@@ -35,40 +35,41 @@
             android:layout_height="wrap_content">
 
             <EditText
-                android:layout_margin="10dp"
                 android:id="@+id/loginactivity_edittext_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="10dp"
                 android:hint="email // test@pusan.ac.kr" />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <EditText
-                android:layout_margin="10dp"
                 android:id="@+id/loginactivity_edittext_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="10dp"
                 android:hint="password // 123456"
-                android:inputType="textPassword"/>
+                android:inputType="textPassword" />
         </android.support.design.widget.TextInputLayout>
 
         <Button
-            android:layout_margin="10dp"
             android:id="@+id/loginactivity_button_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="로그인"
-            android:background="@drawable/round_background_2"/>
+            android:layout_margin="10dp"
+            android:background="@drawable/round_background_2"
+            android:text="로그인" />
 
         <Button
-            android:layout_margin="10dp"
             android:id="@+id/loginactivity_button_signup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="회원가입"
-            android:background="@drawable/round_background_2"/>
+            android:layout_margin="10dp"
+            android:background="@drawable/round_background_2"
+            android:text="회원가입" />
 
 
     </LinearLayout>

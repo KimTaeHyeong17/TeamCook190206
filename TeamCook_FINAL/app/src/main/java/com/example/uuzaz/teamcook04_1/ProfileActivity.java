@@ -23,35 +23,41 @@ public class ProfileActivity extends AppCompatActivity {
     Button start;
     DatabaseReference databaseReference;
     String token = FirebaseInstanceId.getInstance().getToken();
+    private BackPressCloseHandler backpressclosehandler;
 
-
+    @Override
+    public void onBackPressed() {
+        //super.onBackPressed();
+        backpressclosehandler.onBackPressed();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
+        //backpresshandler
+        backpressclosehandler = new BackPressCloseHandler(this);
+
+
+        //firebase database
         name = (EditText) findViewById(R.id.profilefragmentsecond_edittext_name);
         school = (EditText) findViewById(R.id.profilefragmentsecond_edittext_schoolname);
         major = (EditText) findViewById(R.id.profilefragmentsecond_edittext_major);
         grade = (EditText) findViewById(R.id.profilefragmentsecond_edittext_grade);
         specialty = (EditText) findViewById(R.id.profilefragmentsecond_edittext_specialty);
         awards = (EditText) findViewById(R.id.profilefragmentsecond_edittext_awards);
-
         databaseReference = FirebaseDatabase.getInstance().getReference("users");
-
         start = (Button) findViewById(R.id.id_generate);
 
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                writeNewUser(token, name.getText().toString(), school.getText().toString(),
-                        major.getText().toString(), grade.getText().toString(),
-                        specialty.getText().toString(),
-                        awards.getText().toString());
+                writeNewUser(token, name.getText().toString(), school.getText().toString(), major.getText().toString(), grade.getText().toString(), specialty.getText().toString(), awards.getText().toString());
                 Intent intent = new Intent(ProfileActivity.this, MainActivity.class);
                 startActivity(intent);
+                finish();
 
             }
         });
@@ -64,6 +70,7 @@ public class ProfileActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(ProfileActivity.this, LoginActivity.class);
                 startActivity(intent);
+                finish();
 
             }
         });

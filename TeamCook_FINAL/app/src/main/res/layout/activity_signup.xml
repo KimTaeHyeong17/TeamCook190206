@@ -24,7 +24,7 @@
             android:id="@+id/signupactivity_edittext_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="학교 웹메일을 사용해 주세요" />
+            android:text="학교 웹메일을 사용해 주세요\nProvided by Firebase Authentication" />
 
 
     <android.support.design.widget.TextInputLayout
@@ -36,7 +36,7 @@
             android:id="@+id/signupactivity_edittext_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="email" />
+            android:hint="email // xxxx@pusan.ac.kr" />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
@@ -47,7 +47,7 @@
             android:id="@+id/signupactivity_edittext_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="password"
+            android:hint="password // 6자리 이상"
             android:inputType="textPassword"/>
     </android.support.design.widget.TextInputLayout>
 
@@ -58,6 +58,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="회원가입"
+        android:background="@drawable/round_background_2"/>
+    <Button
+        android:layout_margin="10dp"
+        android:id="@+id/signupactivity_button_signup_back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="뒤로가기"
         android:background="@drawable/round_background_2"/>
 
 

@@ -33,6 +33,9 @@ public class MainProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_profile);
+        name = (TextView) findViewById(R.id.activity_main_profile_textview_name);
+        major = (TextView) findViewById(R.id.activiy_main_profile_textview_specialty);
+
         btn_back03 = (ImageButton) findViewById(R.id.id_back03);
         btn_back03.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("WrongConstant")
@@ -44,25 +47,22 @@ public class MainProfileActivity extends AppCompatActivity {
             }
         });
 
-
-        name = (TextView) findViewById(R.id.activity_main_profile_textview_name);
-        major = (TextView) findViewById(R.id.activiy_main_profile_textview_specialty);
+        //이름, 역할 가져오기
         String token = FirebaseInstanceId.getInstance().getToken();
-        databaseReference = FirebaseDatabase.getInstance().getReference("user");
-        databaseReference.child(token)
-                .addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        User user = dataSnapshot.getValue(User.class);
-                        //name.setText(user.name);
-                        //major.setText(user.major);
-                    }
+        //path 가 user 이 아니라 users 니까 nullpointerexception이 뜨지
+        databaseReference = FirebaseDatabase.getInstance().getReference("users");
+        databaseReference.child(token).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                User user = dataSnapshot.getValue(User.class);
+                name.setText(user.name);
+                major.setText(user.major);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                    }
-                });
+            }
+        });
 
         // Initializing the TabLayout
         tabLayout = (TabLayout) findViewById(R.id.tabLayout);

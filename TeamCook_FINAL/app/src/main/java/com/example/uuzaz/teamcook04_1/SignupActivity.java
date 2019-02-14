@@ -20,8 +20,7 @@ public class SignupActivity extends AppCompatActivity {
 
     private EditText email_join;
     private EditText pwd_join;
-    private Button signup;
-    String emailstr, passwordstr;
+    private Button signup, back;
     private FirebaseAuth firebaseAuth;
 
 
@@ -32,8 +31,19 @@ public class SignupActivity extends AppCompatActivity {
         email_join = (EditText) findViewById(R.id.signupactivity_edittext_email);
         pwd_join = (EditText) findViewById(R.id.signupactivity_edittext_password);
         signup = (Button) findViewById(R.id.signupactivity_button_signup);
+        back = (Button) findViewById(R.id.signupactivity_button_signup_back);
 
         firebaseAuth = FirebaseAuth.getInstance();
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(SignupActivity.this,"뒤로가기",Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         signup.setOnClickListener(new View.OnClickListener() {
             @Override

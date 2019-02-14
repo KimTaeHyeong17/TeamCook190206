@@ -16,14 +16,20 @@ public class MainActivity extends AppCompatActivity {
     ImageButton btn_profile;
     private TabLayout tabLayout;
     private ViewPager viewPager;
+    private BackPressCloseHandler backpressclosehandler;
 
+    @Override
+    public void onBackPressed() {
+        //super.onBackPressed();
+        backpressclosehandler.onBackPressed();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        backpressclosehandler = new BackPressCloseHandler(this);
 
         btn_profile = (ImageButton) findViewById(R.id.id_profile);
         btn_profile.setOnClickListener(new View.OnClickListener() {
@@ -31,10 +37,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, MainProfileActivity.class);
-
-
                 startActivity(intent);
-
             }
         });
 
